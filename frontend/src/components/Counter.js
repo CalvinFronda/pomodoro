@@ -57,8 +57,12 @@ class Counter extends Component {
   render() {
     const buttonString = this.state.timerId ? 'Stop' : 'Start';
     const Button = (props) => <button className="btn" onClick={props.action}>{props.children}</button>
+    const divStyle = {
+      textAlign: "center",
+
+    }
     return (
-      <div className="app">
+      <div className="app" style={divStyle}>
 
         <Timer active={this.state.active} seconds={this.state.seconds} />
         <Button action={this.playStop}>{buttonString}</Button>
